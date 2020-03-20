@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CurrencyList()
+      home:
+      CurrencyList()
       //MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

@@ -51,14 +51,14 @@ class CurrencyMarketValueDetails {
 
   CurrencyMarketValueDetails.fromJson(Map<String, dynamic> json) {
     _market = json['market'];
-    _change24Hour = json['change_24_hour'];
-    _high = json['high'];
-    _low = json['low'];
-    _volume = json['volume'];
-    _lastPrice = json['last_price'];
-    _bid = json['bid'];
-    _ask = json['ask'];
-    _timestamp = json['timestamp'];
+    _change24Hour = json['change_24_hour'] != null ? (json['change_24_hour']).toString(): "";
+    _high = json['high'] != null ? (json['high']).toString() :"";
+    _low = json['low'] != null ? (json['low']).toString() : "";
+    _volume = json['volume'] != null ? (json['volume']).toString() : "";
+    _lastPrice = json['last_price'] != null ? (json['last_price']).toString() : "";
+    _bid = json['bid'] != null ? (json['bid']).toString() : "";
+    _ask = json['ask'] != null ? (json['ask']).toString() : "";
+    _timestamp = checkDouble(json['timestamp']);
   }
 
   Map<String, dynamic> toJson() {
@@ -73,5 +73,13 @@ class CurrencyMarketValueDetails {
     data['ask'] = this._ask;
     data['timestamp'] = this._timestamp;
     return data;
+  }
+
+   dynamic checkDouble(dynamic value) {
+    if (value is double) {
+      return value.round();
+    } else {
+      return value;
+    }
   }
 }
