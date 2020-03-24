@@ -26,14 +26,17 @@ class _Config {
   static const BASE_URL = 'BASE_URL';
   static const ENV = "ENV";
 
+  // url for DEV environment
   static Map<String, dynamic> devConstants = {
     BASE_URL: "https://api.coindcx.com",
   };
 
+  // url for Production environment
   static Map<String, dynamic> prodConstants = {
     BASE_URL: "https://api.coindcx.com",
   };
 
+  // url for Uat environment
   static Map<String, dynamic> uatConstants = {
     BASE_URL: "https://api.coindcx.com",
   };
